@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "296836726476",
+    "project_id": "access-app-384c0",
+    "storage_bucket": "access-app-384c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296836726476:android:d099ba4f67cf8fb88d4c69",
+        "android_client_info": {
+          "package_name": "com.example.accessapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUZobtCLkspgPJX9t-zXf0BbvYlX_hPY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
