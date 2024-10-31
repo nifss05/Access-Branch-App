@@ -5,7 +5,7 @@ public class GalleryFirebase {
     public GalleryFirebase(String uri, String key) {
         this.uri = uri;
         this.key = key;
-        //nifal
+        //nifal1
     }
 
     public String getUri() {
