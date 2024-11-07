@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#C8C3A9"
+    android:elevation="80dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:padding="3dp"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/member_name"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="name"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/member_email"
+                    android:textStyle="italic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="email@gmail.com"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="16sp">
+                </TextView>
+                <TextView
+                    android:id="@+id/member_post"
+                    android:textStyle="italic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="post"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="16sp">
+                </TextView>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/memberUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="2dp"
+                    android:minHeight="48dp"
+                    android:text="update_info"
+                    android:textSize="15sp"
+                    android:background="@drawable/curve_corners"
+                    android:elevation="50dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:outlineSpotShadowColor="#070707"/>
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/memberImage"
+                android:layout_width="80dp"
+                android:layout_height="130dp"
+                android:src="@drawable/addmemberimg"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.5"
+                android:elevation="5dp"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

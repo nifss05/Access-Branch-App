@@ -47,8 +47,7 @@ public class Upload_poster extends AppCompatActivity {
     EditText posterTitle;
     Button posbtn;
 
-    FirebaseFirestore db;
-    DatabaseReference reference;
+    DatabaseReference reference,dbref;
     StorageReference storageReference;
 
     private ProgressDialog pd;
@@ -65,9 +64,7 @@ public class Upload_poster extends AppCompatActivity {
         });
 
         pd = new ProgressDialog(this);
-        db = FirebaseFirestore.getInstance();
         reference = FirebaseDatabase.getInstance().getReference();
-        //reference = FirebaseDatabase.getInstance().getReference();
         storageReference = FirebaseStorage.getInstance().getReference();
 
         posterTitle =findViewById(R.id.posterTitle);
@@ -131,8 +128,8 @@ public class Upload_poster extends AppCompatActivity {
 
     private void uploadData() {
 
-        reference = reference.child("Notice");
-        final String uq = reference.push().getKey();
+        dbref = reference.child("Notice");
+        final String uq = dbref.push().getKey();
 
         String title = posterTitle.getText().toString();
 

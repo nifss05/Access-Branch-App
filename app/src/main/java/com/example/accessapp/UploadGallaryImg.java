@@ -51,7 +51,7 @@ public class UploadGallaryImg extends AppCompatActivity {
     StorageReference storageReference;
     String downloadUri;
 
-    DatabaseReference reference;
+    DatabaseReference reference,dbref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,7 +143,7 @@ public class UploadGallaryImg extends AppCompatActivity {
                     });
                 }else {
                     pd.dismiss();
-                    Toast.makeText(UploadGallaryImg.this, "Somthing Went wrong 111", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UploadGallaryImg.this, "Somthing Went wrong !!!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -153,10 +153,10 @@ public class UploadGallaryImg extends AppCompatActivity {
 
     private void uploadData() {
 
-        reference = reference.child(category);
-       final String uq = reference.push().getKey();
-       // GalleryFirebase FG = new GalleryFirebase(downloadUri,uq);
-        reference.child(uq).setValue(downloadUri).addOnSuccessListener(new OnSuccessListener<Void>() {
+        dbref = reference.child(category);
+       final String uq = dbref.push().getKey();
+        GalleryFirebase FG = new GalleryFirebase(downloadUri,uq);
+        reference.child(uq).setValue(FG).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 pd.dismiss();
