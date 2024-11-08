@@ -47,4 +47,5 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation (libs.material.v100)
     implementation (libs.circleimageview)
+    implementation ("com.squareup.picasso:picasso:2.8")
 }

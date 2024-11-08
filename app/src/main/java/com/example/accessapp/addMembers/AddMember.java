@@ -49,6 +49,7 @@ public class AddMember extends AppCompatActivity {
     ProgressDialog pd;
     DatabaseReference reference,dbref;
     StorageReference storageReference;
+    String p="";
 
 
     @Override
@@ -68,7 +69,7 @@ public class AddMember extends AppCompatActivity {
         addmemberpost=findViewById(R.id.addmemberpost);
         addmemberbtn=findViewById(R.id.addmemberBtn);
 
-        reference= FirebaseDatabase.getInstance().getReference();
+        reference= FirebaseDatabase.getInstance().getReference().child("members");
         storageReference = FirebaseStorage.getInstance().getReference().child("MEMBERimg");
         pd= new ProgressDialog(this);
 
@@ -82,7 +83,26 @@ public class AddMember extends AppCompatActivity {
         addmemberbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkValidation();
+                String name = addmembername.getText().toString();
+                String email = addmemberEmail.getText().toString();
+                String post = addmemberpost.getText().toString();
+                if(name.isEmpty())
+                {
+                    addmembername.setError("Empty!");
+                    addmembername.requestFocus();
+                }else if(email.isEmpty())
+                {
+                    addmemberEmail.setError("Empty!");
+                    addmemberEmail.requestFocus();
+                }else if(post.isEmpty())
+                {
+                    addmemberpost.setError("Empty!");
+                    addmemberpost.requestFocus();
+                } else if (bitmap == null) {
+                    Toast.makeText(AddMember.this, "Add Image !!", Toast.LENGTH_SHORT).show();
+                }else {
+                    uploadImg();
+                }
             }
         });
 
@@ -90,34 +110,14 @@ public class AddMember extends AppCompatActivity {
 
     }
 
-    private void checkValidation() {
+     private void uploadData() {
+
         String name = addmembername.getText().toString();
         String email = addmemberEmail.getText().toString();
         String post = addmemberpost.getText().toString();
-        if(name.isEmpty())
-        {
-            addmembername.setError("Empty!");
-            addmembername.requestFocus();
-        }else if(email.isEmpty())
-        {
-            addmemberEmail.setError("Empty!");
-            addmemberEmail.requestFocus();
-        }else if(post.isEmpty())
-        {
-            addmemberpost.setError("Empty!");
-            addmemberpost.requestFocus();
-        } else if (bitmap == null) {
-            Toast.makeText(AddMember.this, "Add Image !!", Toast.LENGTH_SHORT).show();
-        }else {
-            uploadImg();
-        }
-    }
 
-    private void uploadData() {
-
-        dbref = reference.child("MEMBERS");
-        final String uq = dbref.push().getKey();
-
+         dbref = reference.child("MEMBERS");
+         final String uq = dbref.push().getKey();
 
         MemberData memberData = new MemberData(name,email,post,downloadUri,uq);
         dbref.child(uq).setValue(memberData).addOnSuccessListener(new OnSuccessListener<Void>() {
