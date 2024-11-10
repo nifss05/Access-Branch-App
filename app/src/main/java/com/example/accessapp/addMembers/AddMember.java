@@ -49,7 +49,7 @@ public class AddMember extends AppCompatActivity {
     ProgressDialog pd;
     DatabaseReference reference,dbref;
     StorageReference storageReference;
-    String p="";
+
 
 
     @Override

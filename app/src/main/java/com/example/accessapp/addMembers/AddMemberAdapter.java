@@ -1,6 +1,7 @@
 package com.example.accessapp.addMembers;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +52,13 @@ public class AddMemberAdapter extends RecyclerView.Adapter<AddMemberAdapter.Memb
         holder.update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Update teacher", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context,UpdateMemberActivity.class);
+                intent.putExtra("name",item.getName());
+                intent.putExtra("email",item.getEmail());
+                intent.putExtra("post",item.getPost());
+                intent.putExtra("image",item.getImg());
+                intent.putExtra("key",item.getKey());
+                context.startActivity(intent);
             }
         });
 
