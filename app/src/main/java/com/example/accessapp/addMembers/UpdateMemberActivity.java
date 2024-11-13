@@ -145,7 +145,7 @@ public class UpdateMemberActivity extends AppCompatActivity {
             update_memberpost.setError("Empty");
             update_memberpost.requestFocus();
         }else if (bitmap==null){
-            uploadData("");
+            uploadData(image);
         }
         else {
             uploadImg();

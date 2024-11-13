@@ -42,12 +42,13 @@ public class AddMemberAdapter extends RecyclerView.Adapter<AddMemberAdapter.Memb
         holder.name.setText(item.getName());
         holder.email.setText(item.getEmail());
         holder.post.setText(item.getPost());
-        holder.name.setText(item.getName());
+
         try {
             Picasso.get().load(item.getImg()).into(holder.imageView);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
 
         holder.update.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -12,12 +12,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.accessapp.addMembers.UpdateMember;
+import com.example.accessapp.deleteNotice.DeleteNoticeActivity;
+import com.example.accessapp.deleteNotice.Upload_notice;
 
 public class MainActivity extends AppCompatActivity {
 
     CardView addPos;
     CardView addPhoto;
     CardView addmember;
+    CardView delete;
     Intent intent;
 
     @Override
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         addPos=findViewById(R.id.addposter);
         addPhoto=findViewById(R.id.addphoto);
         addmember=findViewById(R.id.addmembers);
+        delete=findViewById(R.id.delete);
 
 
         addmember.setOnClickListener(new View.OnClickListener() {
@@ -52,9 +56,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         addPos.setOnClickListener(view -> {
-            intent = new Intent(MainActivity.this, Upload_poster.class);
+            intent = new Intent(MainActivity.this, Upload_notice.class);
             startActivity(intent);
         });
-
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(MainActivity.this, DeleteNoticeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

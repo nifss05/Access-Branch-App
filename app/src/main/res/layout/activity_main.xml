@@ -223,86 +223,21 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/attentance"
-        android:layout_width="140dp"
-        android:layout_height="180dp"
-        android:outlineSpotShadowColor="#FFFF"
-        app:cardElevation="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.642"
-        app:layout_constraintStart_toEndOf="@+id/addmembers"
-        app:layout_constraintTop_toBottomOf="@+id/addphoto"
-        app:layout_constraintVertical_bias="0.12"
-        tools:ignore="TextSizeCheck"
-        app:cardCornerRadius="25dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/black"
-            android:contentDescription="@string/m">
-
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:background="@drawable/oval"
-                android:contentDescription="@string/n"
-                android:padding="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.277"
-                app:srcCompat="@drawable/baseline_attendance" />
-
-            <View
-                android:id="@+id/view4"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.703" />
-
-            <TextView
-                android:id="@+id/textView4"
-                style="@style/Widget.MaterialComponents.Snackbar.TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-smallcaps"
-                android:text="@string/add_attendance"
-                android:textColor="#FFFDFD"
-                android:textColorLink="#FFFFFF"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/delete"
         android:layout_width="140dp"
         android:layout_height="180dp"
+        android:layout_marginEnd="32dp"
         android:outlineSpotShadowColor="#FFFF"
+        app:cardCornerRadius="25dp"
         app:cardElevation="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addmembers"
-        app:layout_constraintVertical_bias="0.409"
-        app:cardCornerRadius="25dp">
-
+        app:layout_constraintHorizontal_bias="0.968"
+        app:layout_constraintStart_toEndOf="@+id/addmembers"
+        app:layout_constraintTop_toBottomOf="@+id/addphoto"
+        app:layout_constraintVertical_bias="0.12">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -354,6 +289,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView1"
                 tools:ignore="NotSibling" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.cardview.widget.CardView>
 
 

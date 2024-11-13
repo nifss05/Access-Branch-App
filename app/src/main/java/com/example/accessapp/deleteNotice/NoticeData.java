@@ -1,4 +1,4 @@
-package com.example.accessapp;
+package com.example.accessapp.deleteNotice;
 
 public class NoticeData {
     String title,img,date,time,key;

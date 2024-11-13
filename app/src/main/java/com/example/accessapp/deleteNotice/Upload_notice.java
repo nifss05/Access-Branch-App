@@ -1,4 +1,4 @@
-package com.example.accessapp;
+package com.example.accessapp.deleteNotice;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -20,13 +20,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.accessapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -36,7 +36,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Upload_poster extends AppCompatActivity {
+public class Upload_notice extends AppCompatActivity {
 
     CardView uploadImg ;
     final int REQ =1;
@@ -47,7 +47,7 @@ public class Upload_poster extends AppCompatActivity {
     EditText posterTitle;
     Button posbtn;
 
-    DatabaseReference reference,dbref;
+    DatabaseReference reference;
     StorageReference storageReference;
 
     private ProgressDialog pd;
@@ -100,7 +100,7 @@ public class Upload_poster extends AppCompatActivity {
         final StorageReference filepath;
         filepath = storageReference.child("Notice").child(finalImg +"jpg");
         final UploadTask uploadTask = filepath.putBytes(finalImg);
-       uploadTask.addOnCompleteListener(Upload_poster.this, new OnCompleteListener<UploadTask.TaskSnapshot>() {
+       uploadTask.addOnCompleteListener(Upload_notice.this, new OnCompleteListener<UploadTask.TaskSnapshot>() {
            @Override
            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
             if(task.isSuccessful()){
@@ -118,7 +118,7 @@ public class Upload_poster extends AppCompatActivity {
                });
             }else {
                 pd.dismiss();
-                Toast.makeText(Upload_poster.this, "Somthing Went wrong 111", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Upload_notice.this, "Somthing Went wrong 111", Toast.LENGTH_SHORT).show();
             }
            }
        });
@@ -128,8 +128,8 @@ public class Upload_poster extends AppCompatActivity {
 
     private void uploadData() {
 
-        dbref = reference.child("Notice");
-        final String uq = dbref.push().getKey();
+        reference = reference.child("Notice");
+        final String uq = reference.push().getKey();
 
         String title = posterTitle.getText().toString();
 
@@ -147,14 +147,14 @@ public class Upload_poster extends AppCompatActivity {
             @Override
             public void onSuccess(Void unused) {
                 pd.dismiss();
-                Toast.makeText(Upload_poster.this, "Data uploaded", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Upload_notice.this, "Data uploaded", Toast.LENGTH_SHORT).show();
 
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 pd.dismiss();
-                Toast.makeText(Upload_poster.this, "somthing went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Upload_notice.this, "somthing went wrong", Toast.LENGTH_SHORT).show();
 
             }
         });
